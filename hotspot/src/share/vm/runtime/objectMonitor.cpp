@@ -314,6 +314,7 @@ bool ObjectMonitor::try_enter(Thread* THREAD) {
 }
 
 void ATTR ObjectMonitor::enter(TRAPS) {
+  //重量级加锁
   // The following code is ordered to check the most common cases first
   // and to reduce RTS->RTO cache line upgrades on SPARC and IA32 processors.
   Thread * const Self = THREAD ;
